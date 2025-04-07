@@ -18,6 +18,9 @@
 		AD1436E02D9CBD1F00A13929 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */; };
 		AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */; };
 		AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E42D9CD2A100A13929 /* Asset.swift */; };
+		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
+		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
+		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamAsset.swift; sourceTree = "<group>"; };
 		AD1436E42D9CD2A100A13929 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
+		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1436E42D9CD2A100A13929 /* Asset.swift */,
+				AD5BDA2A2DA332F400CF1B68 /* Habit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1436E12D9CC6B800A13929 /* Home */,
-				AD1436D92D9CBCEC00A13929 /* HabitsView.swift */,
+				AD5BDA292DA332D800CF1B68 /* Habits */,
 				AD1436DB2D9CBCF900A13929 /* IdeasView.swift */,
 				AD1436DD2D9CBD1100A13929 /* FinanceView.swift */,
 				AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */,
@@ -120,6 +127,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		AD5BDA292DA332D800CF1B68 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				AD1436D92D9CBCEC00A13929 /* HabitsView.swift */,
+				AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */,
+				AD5BDA322DA3460500CF1B68 /* CalendarView.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,7 +167,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					AD1436AC2D9C55A600A13929 = {
 						CreatedOnToolsVersion = 16.2;
@@ -195,10 +212,13 @@
 			files = (
 				AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */,
 				AD1436E02D9CBD1F00A13929 /* SettingsView.swift in Sources */,
+				AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */,
+				AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */,
 				AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */,
 				AD1436DE2D9CBD1100A13929 /* FinanceView.swift in Sources */,
 				AD1436DC2D9CBCF900A13929 /* IdeasView.swift in Sources */,
 				AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */,
+				AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */,
 				AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */,
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
@@ -243,6 +263,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HAC7HSBS8D;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -306,6 +327,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HAC7HSBS8D;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -335,7 +357,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuccessSync/Preview Content\"";
-				DEVELOPMENT_TEAM = HAC7HSBS8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -364,7 +385,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuccessSync/Preview Content\"";
-				DEVELOPMENT_TEAM = HAC7HSBS8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -30,8 +30,6 @@ struct HomeView: View {
                     ForEach(allAssets) { asset in
                         DreamAsset(title: "Upload a picture of your dream \(asset.title)")
                     }
-                    
-                    
                 }
                 .padding()
                 .toolbar {
