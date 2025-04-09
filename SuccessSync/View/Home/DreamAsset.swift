@@ -10,57 +10,32 @@ import PhotosUI
 
 struct DreamAsset: View {
     let title: String
-    @State private var selected: PhotosPickerItem?
-    @State private var picture: UIImage?
+    @State var picture: UIImage?
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            PhotosPicker(selection: $selected, matching: .images) {
+        ZStack(alignment: .top) {
+            GeometryReader { geo in
                 if let picture {
                     Image(uiImage: picture)
                         .resizable()
                         .scaledToFill()
-                } else {
-                    Text(title)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .frame(maxWidth: geo.size.width)
+                        .clipped()
                 }
             }
-            .onChange(of: selected) { oldValue, newValue in
-                Task(priority: .background) {
-                    if let data = try? await newValue?.loadTransferable(type: Data.self) {
-                        picture = UIImage(data: data)
-                    }
-                }
-            }
-            .frame(height: 225)
-            .buttonStyle(.plain)
             
-            
-            Spacer()
-            
-            Button {
-                
-            } label: {
-                HStack {
-                    Text("Price:")
-                        .padding()
-                }
+            Text(title.capitalized)
+                .font(.custom("Tangerine-Bold", size: 40, relativeTo: .largeTitle))
+                .italic()
+                .underline()
+                .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 75)
-                .background(.ultraThinMaterial)
-            }
-            .buttonStyle(.plain)
+                .background(.ultraThickMaterial.opacity(0.75))
         }
-        .frame(height: 300)
-        .frame(maxWidth: .infinity)
-        .background(.ultraThinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 #Preview {
-    DreamAsset(title: "Upload a picture of your dream house")
+    DreamAsset(title: "house", picture: .house)
 }

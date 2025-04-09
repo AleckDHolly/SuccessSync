@@ -7,19 +7,23 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
-struct Habit: Identifiable {
-    let id = UUID()
-    let name: String
-    let color: Color
+@Model
+class Habit {
+    var id = UUID()
+    var name: String
+    var colorHex: String
     var datesCompleted: [Date]?
-    
-    mutating func markCompleted(at date: Date) {
-        if datesCompleted == nil {
-            datesCompleted = [date]
-        } else {
-            datesCompleted?.append(date)
-        }
+
+    init(name: String, color: Color, datesCompleted: [Date]? = nil) {
+        self.name = name
+        self.colorHex = color.toHex()  // convert Color to hex string
+        self.datesCompleted = datesCompleted
+    }
+
+    var color: Color {
+        Color(hex: colorHex) ?? .blue  // fallback color if decoding fails
     }
 }
 

@@ -6,46 +6,74 @@
 //
 
 import SwiftUI
+import PhotosUI
+import SwiftData
 
 struct HomeView: View {
+    @State private var showingDreamSheet: Bool = false
+    @State private var editDreamSheet: Bool = false
+    @State private var asset: Asset?
+    
+    @Environment(\.modelContext) private var context
+    @Query(sort: \Asset.createdAt) private var assets: [Asset]
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 30) {
-                    
-                    VStack(alignment: .leading) {
-                        Text("Quote of the day:")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        Text("\"If you ain't locked in, you're locked out. Choose wisely.\"")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    DreamAsset(title: "Upload a picture of your dream house")
-                    
-                    DreamAsset(title: "Upload a picture of your dream car")
-                    
-                    ForEach(allAssets) { asset in
-                        DreamAsset(title: "Upload a picture of your dream \(asset.title)")
+            VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading) {
+                    Text("Quote of the day:")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    Text("\"If you ain't locked in, you're locked out. Choose wisely.\"")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                TabView {
+                    ForEach(assets) { asset in
+                        Tab {
+                            Menu {
+                                Button("Delete", role: .destructive) {
+                                    context.delete(asset)
+                                    try? context.save()
+                                }
+                                Button("Edit") {
+                                    self.asset = asset
+                                }
+                            } label: {
+                                DreamAsset(title: asset.title, picture: asset.image)
+                                    .frame(maxHeight: .infinity)
+                            }
+                            .foregroundStyle(.primary)
+                        }
                     }
                 }
-                .padding()
-                .toolbar {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "plus")
-                            .padding(.trailing)
-                    }
+                .tabViewStyle(.page)
+            }
+            .padding()
+            .toolbar {
+                Button {
+                    showingDreamSheet = true
+                } label: {
+                    Image(systemName: "plus")
+                        .padding(.trailing)
                 }
             }
             .navigationTitle("Lock In")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $showingDreamSheet) {
+                AddDreamView()
+                    .presentationDetents([.medium])
+            }
+            .sheet(item: $asset) { asset in
+                EditDreamView(dream: asset.title, image: asset.image, asset: asset)
+                    .presentationDetents([.medium])
+            }
         }
     }
 }
+
 
 #Preview {
     HomeView()
