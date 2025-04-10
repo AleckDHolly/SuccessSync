@@ -19,6 +19,7 @@
 		AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */; };
 		AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E42D9CD2A100A13929 /* Asset.swift */; };
 		AD35DEBB2DA721C3009F7A2A /* EditDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */; };
+		AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */; };
 		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
 		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
 		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
@@ -42,6 +43,7 @@
 		AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamAsset.swift; sourceTree = "<group>"; };
 		AD1436E42D9CD2A100A13929 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDreamView.swift; sourceTree = "<group>"; };
+		AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
 		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				AD1436D92D9CBCEC00A13929 /* HabitsView.swift */,
 				AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */,
 				AD5BDA322DA3460500CF1B68 /* CalendarView.swift */,
+				AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
 				AD5BDA3A2DA3A73E00CF1B68 /* AssetViewModel.swift in Sources */,
+				AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +421,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

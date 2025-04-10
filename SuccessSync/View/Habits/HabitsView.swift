@@ -6,67 +6,87 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HabitsView: View {
     @State private var date: Date = Date()
-    let habits: [Habit] = allHabits
+    @Query private var habits: [Habit]
+    @State private var addHabitSheet: Bool = false
+    @State private var editHAbitSheet: Bool = false
+    
+    var completedHabitsCount: Int {
+        habits.filter { habit in
+            habit.datesCompleted.contains(where: {
+                Calendar.current.isDate($0, inSameDayAs: date)
+            })
+        }.count
+    }
+
     
     var body: some View {
-        NavigationStack {
-            ZStack(alignment: .bottomTrailing) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Your progress")
-                        
-                        Spacer()
-                        
-                        DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
-                            .datePickerStyle(.automatic)
+        ZStack(alignment: .bottomTrailing) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Your progress")
+                    
+                    Spacer()
+                    
+                    DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
+                        .datePickerStyle(.automatic)
+                }
+                .padding(.horizontal)
+                
+                HStack {
+                    Group {
+                        Text(Calendar.current.isDate(date, inSameDayAs: Date()) ? "Today" : date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.largeTitle)
+                        Image(systemName: "pencil")
+                            .font(.largeTitle)
                     }
                     
-                    HStack {
-                        Group {
-                            Text("Today")
-                                .font(.largeTitle)
-                            Image(systemName: "pencil")
-                                .font(.largeTitle)
-                        }
-                        
-                        Spacer()
-                        
-                        Text("1/3")
-                            .font(.title)
-                            .foregroundStyle(.cyan)
-                    }
-                    .padding(.vertical)
+                    Spacer()
                     
-                    ProgressView(value: 1, total: 3)
-                    
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(habits) { habit in
-                                SingleHabit(habit: habit)
-                            }
-                        }
-                        .padding(.vertical)
-                        .padding(.bottom, 75)
-                    }
+                    Text("\(completedHabitsCount)/\(habits.count)")
+                        .font(.title)
+                        .foregroundStyle(.cyan)
+                }
+                .padding()
+                
+                if habits.count > 0 {
+                    ProgressView(value: Float(completedHabitsCount), total: Float(habits.count))
+                        .padding(.horizontal)
+                } else {
+                    EmptyView()
+                        .padding(.horizontal)
                 }
                 
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.title)
-                        .frame(width: 20, height: 20)
-                        .padding()
-                        .background(.blue)
-                        .clipShape(Circle())
-                        .padding(30)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(habits) { habit in
+                            SingleHabit(habit: habit)
+                        }
+                    }
+                    .padding(.vertical)
+                    .padding(.bottom, 75)
                 }
-                .buttonStyle(.plain)
             }
+            
+            Button {
+                addHabitSheet = true
+            } label: {
+                Image(systemName: "plus")
+                    .font(.title)
+                    .frame(width: 20, height: 20)
+                    .padding()
+                    .background(.blue)
+                    .clipShape(Circle())
+                    .padding(30)
+            }
+            .buttonStyle(.plain)
         }
+        .fullScreenCover(isPresented: $addHabitSheet, content: {
+            AddHabitView()
+        })
     }
 }
 

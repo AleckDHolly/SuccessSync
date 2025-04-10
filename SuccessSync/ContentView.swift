@@ -10,25 +10,40 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Tab("Home", systemImage: "house.fill") {
-                HomeView()
-            }
+            //            Tab("Home", systemImage: "house.fill") {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
+            //            }
             
-            Tab("Habits", systemImage: "calendar") {
-                HabitsView()
-            }
+            //            Tab("Habits", systemImage: "calendar") {
+            HabitsView()
+                .tabItem {
+                    Label("Habits", systemImage: "calendar")
+                }
+            //            }
             
-            Tab("Ideas", systemImage: "list.bullet.clipboard") {
-                IdeasView()
-            }
+            //            Tab("Ideas", systemImage: "list.bullet.clipboard") {
+            IdeasView()
+                .tabItem {
+                    Label("Ideas", systemImage: "list.bullet.clipboard")
+                }
+            //            }
             
-            Tab("Finance", systemImage: "creditcard.fill") {
-                FinanceView()
-            }
+            //            Tab("Finance", systemImage: "creditcard.fill") {
+            FinanceView()
+                .tabItem {
+                    Label("Finance", systemImage: "creditcard.fill")
+                }
+            //            }
             
-            Tab("Settings", systemImage: "gear") {
-                SettingsView()
-            }
+            //            Tab("Settings", systemImage: "gear") {
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+            //            }
         }
     }
 }

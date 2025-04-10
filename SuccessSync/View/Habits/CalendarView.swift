@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State private var selectedDate = Date()
+    @Binding var selectedDate: Date
     @State private var currentWeekIndex = 0
-    let datesCompleted: [Date]
+    @Binding var datesCompleted: [Date]
 
     private let numberOfWeeks = 200
     private let calendar = Calendar.current
@@ -100,5 +100,5 @@ extension Calendar {
 
 
 #Preview {
-    CalendarView(datesCompleted: [Date()])
+    CalendarView(selectedDate: .constant(Date()), datesCompleted: .constant([Date()]))
 }

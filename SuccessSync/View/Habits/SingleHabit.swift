@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SingleHabit: View {
-    let habit: Habit
+    @State var habit: Habit
+    @State var selectedDate: Date = Date()
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,13 +23,17 @@ struct SingleHabit: View {
                     .frame(width: 12)
             }
             
-            CalendarView(datesCompleted: habit.datesCompleted ?? [])
+            CalendarView(selectedDate: $selectedDate, datesCompleted: $habit.datesCompleted)
             
             HStack {
                 Spacer()
                 
                 Button {
+                    if !habit.datesCompleted.contains(selectedDate) {
+                        habit.datesCompleted.append(selectedDate)
+                    }
                     
+                    print(habit.datesCompleted)
                 } label: {
                     Text("Done")
                 }
@@ -41,5 +47,6 @@ struct SingleHabit: View {
 }
 
 #Preview {
-    SingleHabit(habit: allHabits[0])
+    let habit = Habit(name: "Brush teeth", color: .cyan)
+    SingleHabit(habit: habit)
 }

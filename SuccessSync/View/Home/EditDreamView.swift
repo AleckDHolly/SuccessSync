@@ -30,13 +30,13 @@ struct EditDreamView: View {
                 .padding()
             
             PhotosPicker(selection: $selected, matching: .images) {
-                Text("Edit the image of your dream..")
-                    .foregroundStyle(Color.primary)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                if let image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(10)
+                        .frame(maxWidth: .infinity)
+                }
             }
             .onChange(of: selected, initial: false) { oldValue, newValue in
                 Task(priority: .background) {
@@ -47,32 +47,36 @@ struct EditDreamView: View {
             }
             .buttonStyle(.plain)
             
-            if let image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-            } else {
-                EmptyView()
-            }
-            
-            Spacer()
-            
-            Button {
-                if let image, !dream.isEmpty {
-                    asset.title = dream
-                    asset.image = image
-                    try? context.save()
+            HStack {
+                Button {
+                    if let image, !dream.isEmpty {
+                        asset.title = dream
+                        asset.image = image
+                        try? context.save()
+                    }
+                    dismiss()
+                } label: {
+                    Text("Edit Dream")
+                        .foregroundStyle(Color.primary)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
                 }
-                dismiss()
-            } label: {
-                Text("Edit Dream")
-                    .foregroundStyle(Color.primary)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                
+                Button {
+                    context.delete(asset)
+                    dismiss()
+                } label: {
+                    Text("Delete Dream")
+                        .foregroundStyle(Color.primary)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
             }
             
         }
@@ -83,6 +87,6 @@ struct EditDreamView: View {
 }
 
 #Preview {
-    @Previewable @Query var assets: [Asset]
-    EditDreamView(asset: assets[0])
+    let asset = Asset(title: "Car", image: UIImage(resource: .car))
+    EditDreamView(dream: asset.title, image: asset.image, asset: asset)
 }

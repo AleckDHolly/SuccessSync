@@ -13,7 +13,8 @@ struct SuccessSyncApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
         }
-        .modelContainer(for: Asset.self)
+        .modelContainer(for: [Asset.self, Habit.self])
     }
 }

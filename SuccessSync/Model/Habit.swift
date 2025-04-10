@@ -14,9 +14,9 @@ class Habit {
     var id = UUID()
     var name: String
     var colorHex: String
-    var datesCompleted: [Date]?
+    var datesCompleted: [Date]
 
-    init(name: String, color: Color, datesCompleted: [Date]? = nil) {
+    init(name: String, color: Color, datesCompleted: [Date] = []) {
         self.name = name
         self.colorHex = color.toHex()  // convert Color to hex string
         self.datesCompleted = datesCompleted
@@ -26,11 +26,3 @@ class Habit {
         Color(hex: colorHex) ?? .blue  // fallback color if decoding fails
     }
 }
-
-let allHabits: [Habit] = [
-    .init(name: "Drink water", color: .green, datesCompleted: [Date()]),
-    .init(name: "Meditate", color: .blue),
-    .init(name: "Read", color: .red),
-    .init(name: "Exercise", color: .yellow),
-    .init(name: "Learn something new", color: .purple),
-]

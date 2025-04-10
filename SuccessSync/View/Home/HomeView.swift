@@ -13,8 +13,6 @@ struct HomeView: View {
     @State private var showingDreamSheet: Bool = false
     @State private var editDreamSheet: Bool = false
     @State private var asset: Asset?
-    
-    @Environment(\.modelContext) private var context
     @Query(sort: \Asset.createdAt) private var assets: [Asset]
     
     var body: some View {
@@ -32,21 +30,13 @@ struct HomeView: View {
                 
                 TabView {
                     ForEach(assets) { asset in
-                        Tab {
-                            Menu {
-                                Button("Delete", role: .destructive) {
-                                    context.delete(asset)
-                                    try? context.save()
-                                }
-                                Button("Edit") {
+//                        Tab {
+                            DreamAsset(title: asset.title, picture: asset.image)
+                                .frame(maxHeight: .infinity)
+                                .onTapGesture {
                                     self.asset = asset
                                 }
-                            } label: {
-                                DreamAsset(title: asset.title, picture: asset.image)
-                                    .frame(maxHeight: .infinity)
-                            }
-                            .foregroundStyle(.primary)
-                        }
+//                        }
                     }
                 }
                 .tabViewStyle(.page)

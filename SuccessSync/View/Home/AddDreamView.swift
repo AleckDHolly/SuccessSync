@@ -29,13 +29,21 @@ struct AddDreamView: View {
                 .padding()
             
             PhotosPicker(selection: $selected, matching: .images) {
-                Text("Add an image of your dream..")
-                    .foregroundStyle(Color.primary)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+                if let image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(10)
+                        .frame(maxWidth: .infinity)
+                } else {
+                    Text("Add a dream of yours..")
+                        .foregroundStyle(Color.primary)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
             }
             .onChange(of: selected, initial: false) { oldValue, newValue in
                 Task(priority: .background) {
@@ -45,17 +53,6 @@ struct AddDreamView: View {
                 }
             }
             .buttonStyle(.plain)
-            
-            if let image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-            } else {
-                EmptyView()
-            }
-            
-            Spacer()
             
             Button {
                 if let image, !dream.isEmpty {
