@@ -80,9 +80,6 @@ struct EditDreamView: View {
             }
             
         }
-        .onAppear {
-            isFocused = true
-        }
     }
 }
 

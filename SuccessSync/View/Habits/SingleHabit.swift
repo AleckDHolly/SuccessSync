@@ -11,6 +11,7 @@ struct SingleHabit: View {
     @State var habit: Habit
     @State var selectedDate: Date = Date()
     @Environment(\.modelContext) private var context
+    @State private var editHabit: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,6 +22,15 @@ struct SingleHabit: View {
                 Circle()
                     .fill(habit.color)
                     .frame(width: 12)
+                
+                Spacer()
+                
+                Button {
+                    editHabit = true
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+                .buttonStyle(.plain)
             }
             
             CalendarView(selectedDate: $selectedDate, datesCompleted: $habit.datesCompleted)
@@ -41,8 +51,12 @@ struct SingleHabit: View {
             }
         }
         .padding()
-        .background(.ultraThinMaterial)
+        .background(habit.color.opacity(0.2))
+        .background(.ultraThinMaterial.opacity(0.8))
         .cornerRadius(10)
+        .fullScreenCover(isPresented: $editHabit, content: {
+            AddHabitView(habit: habit.name, selectedColor: habit.color, isBeingEdited: true, habitToEdit: habit)
+        })
     }
 }
 

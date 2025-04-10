@@ -13,19 +13,20 @@
 		AD1436D62D9CBC9600A13929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1436CF2D9CBC9600A13929 /* Assets.xcassets */; };
 		AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436D72D9CBCDD00A13929 /* HomeView.swift */; };
 		AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436D92D9CBCEC00A13929 /* HabitsView.swift */; };
-		AD1436DC2D9CBCF900A13929 /* IdeasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DB2D9CBCF900A13929 /* IdeasView.swift */; };
+		AD1436DC2D9CBCF900A13929 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DB2D9CBCF900A13929 /* GoalsView.swift */; };
 		AD1436DE2D9CBD1100A13929 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DD2D9CBD1100A13929 /* FinanceView.swift */; };
 		AD1436E02D9CBD1F00A13929 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */; };
 		AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */; };
 		AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E42D9CD2A100A13929 /* Asset.swift */; };
 		AD35DEBB2DA721C3009F7A2A /* EditDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */; };
 		AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */; };
+		AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBE2DA761AD009F7A2A /* Goal.swift */; };
+		AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */; };
 		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
 		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
 		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
 		AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */; };
 		AD5BDA382DA39F1600CF1B68 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */; };
-		AD5BDA3A2DA3A73E00CF1B68 /* AssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA392DA3A73E00CF1B68 /* AssetViewModel.swift */; };
 		AD5BDA3E2DA6121900CF1B68 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,20 +38,21 @@
 		AD1436D12D9CBC9600A13929 /* SuccessSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessSyncApp.swift; sourceTree = "<group>"; };
 		AD1436D72D9CBCDD00A13929 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AD1436D92D9CBCEC00A13929 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
-		AD1436DB2D9CBCF900A13929 /* IdeasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasView.swift; sourceTree = "<group>"; };
+		AD1436DB2D9CBCF900A13929 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		AD1436DD2D9CBD1100A13929 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
 		AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamAsset.swift; sourceTree = "<group>"; };
 		AD1436E42D9CD2A100A13929 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDreamView.swift; sourceTree = "<group>"; };
 		AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		AD35DEBE2DA761AD009F7A2A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotes.swift; sourceTree = "<group>"; };
 		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
 		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tangerine-Bold.ttf"; sourceTree = "<group>"; };
 		AD5BDA362DA39C9C00CF1B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
-		AD5BDA392DA3A73E00CF1B68 /* AssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewModel.swift; sourceTree = "<group>"; };
 		AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,8 @@
 				AD1436E42D9CD2A100A13929 /* Asset.swift */,
 				AD5BDA2A2DA332F400CF1B68 /* Habit.swift */,
 				AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */,
+				AD35DEBE2DA761AD009F7A2A /* Goal.swift */,
+				AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,7 +108,7 @@
 			children = (
 				AD1436E12D9CC6B800A13929 /* Home */,
 				AD5BDA292DA332D800CF1B68 /* Habits */,
-				AD1436DB2D9CBCF900A13929 /* IdeasView.swift */,
+				AD1436DB2D9CBCF900A13929 /* GoalsView.swift */,
 				AD1436DD2D9CBD1100A13929 /* FinanceView.swift */,
 				AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */,
 			);
@@ -114,7 +118,6 @@
 		AD1436CE2D9CBC9600A13929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD5BDA392DA3A73E00CF1B68 /* AssetViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,7 +241,7 @@
 				AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */,
 				AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */,
 				AD1436DE2D9CBD1100A13929 /* FinanceView.swift in Sources */,
-				AD1436DC2D9CBCF900A13929 /* IdeasView.swift in Sources */,
+				AD1436DC2D9CBCF900A13929 /* GoalsView.swift in Sources */,
 				AD35DEBB2DA721C3009F7A2A /* EditDreamView.swift in Sources */,
 				AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */,
 				AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */,
@@ -246,8 +249,9 @@
 				AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */,
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
-				AD5BDA3A2DA3A73E00CF1B68 /* AssetViewModel.swift in Sources */,
+				AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */,
 				AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */,
+				AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +395,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,7 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

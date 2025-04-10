@@ -13,6 +13,7 @@ struct HabitsView: View {
     @Query private var habits: [Habit]
     @State private var addHabitSheet: Bool = false
     @State private var editHAbitSheet: Bool = false
+    @State private var calendarId: Int = 0
     
     var completedHabitsCount: Int {
         habits.filter { habit in
@@ -33,6 +34,11 @@ struct HabitsView: View {
                     
                     DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
                         .datePickerStyle(.automatic)
+                        .id(calendarId)
+                        .onChange(of: date) {
+                            calendarId += 1
+                            print(calendarId)
+                        }
                 }
                 .padding(.horizontal)
                 
@@ -60,14 +66,22 @@ struct HabitsView: View {
                         .padding(.horizontal)
                 }
                 
-                ScrollView {
-                    LazyVStack {
-                        ForEach(habits) { habit in
-                            SingleHabit(habit: habit)
+                if habits.isEmpty {
+                    ContentUnavailableView("Add a habit to begin", systemImage: "heart.text.clipboard.fill", description: Text("It is now time for you to add the habits that will make you great."))
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        .padding(.bottom, 75)
+                } else {
+                    ScrollView(showsIndicators: false) {
+                        LazyVStack {
+                            ForEach(habits) { habit in
+                                SingleHabit(habit: habit)
+                            }
                         }
+                        .padding(.vertical)
+                        .padding(.bottom, 75)
                     }
-                    .padding(.vertical)
-                    .padding(.bottom, 75)
                 }
             }
             

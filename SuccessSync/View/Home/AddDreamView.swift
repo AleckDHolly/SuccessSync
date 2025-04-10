@@ -19,7 +19,7 @@ struct AddDreamView: View {
     
     var body: some View {
         VStack {
-            TextField("Add your dream here..", text: $dream)
+            TextField("Add a dream here..", text: $dream)
                 .focused($isFocused)
                 .padding()
                 .overlay(
@@ -36,7 +36,7 @@ struct AddDreamView: View {
                         .cornerRadius(10)
                         .frame(maxWidth: .infinity)
                 } else {
-                    Text("Add a dream of yours..")
+                    Text("Add a picture")
                         .foregroundStyle(Color.primary)
                         .frame(maxWidth: .infinity)
                         .padding()

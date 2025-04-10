@@ -15,6 +15,8 @@ struct HomeView: View {
     @State private var asset: Asset?
     @Query(sort: \Asset.createdAt) private var assets: [Asset]
     
+    let randomElement: Int = Int.random(in: 0..<allQuotes.count)
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 10) {
@@ -22,24 +24,28 @@ struct HomeView: View {
                     Text("Quote of the day:")
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text("\"If you ain't locked in, you're locked out. Choose wisely.\"")
+                    Text("\"\(allQuotes[randomElement])\"")
                         .font(.title)
                         .fontWeight(.semibold)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                TabView {
-                    ForEach(assets) { asset in
-//                        Tab {
+                if assets.isEmpty {
+                    ContentUnavailableView("Add a dream to begin", systemImage: "figure.run", description: Text("It is now time for you to add the dreams that will motivate you."))
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(10)
+                } else {
+                    TabView {
+                        ForEach(assets) { asset in
                             DreamAsset(asset: asset)
                                 .frame(maxHeight: .infinity)
                                 .onTapGesture {
                                     self.asset = asset
                                 }
-//                        }
+                        }
                     }
+                    .tabViewStyle(.page)
                 }
-                .tabViewStyle(.page)
             }
             .padding()
             .toolbar {

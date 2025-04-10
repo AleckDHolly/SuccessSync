@@ -25,9 +25,9 @@ struct ContentView: View {
             //            }
             
             //            Tab("Ideas", systemImage: "list.bullet.clipboard") {
-            IdeasView()
+            GoalsView()
                 .tabItem {
-                    Label("Ideas", systemImage: "list.bullet.clipboard")
+                    Label("Goals", systemImage: "list.bullet.clipboard")
                 }
             //            }
             
