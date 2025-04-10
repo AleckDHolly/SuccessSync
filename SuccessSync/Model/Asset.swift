@@ -23,13 +23,7 @@ class Asset {
     }
     
     var image: UIImage {
-        get {
-            UIImage(data: imageData)!
-        }
-        set {
-            let newImage = newValue
-            self.imageData = newImage.jpegData(compressionQuality: 1.0)!
-        }
+        UIImage(data: imageData)!
     }
 }
 

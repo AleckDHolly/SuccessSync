@@ -31,7 +31,7 @@ struct HomeView: View {
                 TabView {
                     ForEach(assets) { asset in
 //                        Tab {
-                            DreamAsset(title: asset.title, picture: asset.image)
+                            DreamAsset(asset: asset)
                                 .frame(maxHeight: .infinity)
                                 .onTapGesture {
                                     self.asset = asset

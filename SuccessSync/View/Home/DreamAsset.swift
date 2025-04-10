@@ -9,22 +9,19 @@ import SwiftUI
 import PhotosUI
 
 struct DreamAsset: View {
-    let title: String
-    @State var picture: UIImage?
+    let asset: Asset
     
     var body: some View {
         ZStack(alignment: .top) {
             GeometryReader { geo in
-                if let picture {
-                    Image(uiImage: picture)
+                Image(uiImage: asset.image)
                         .resizable()
                         .scaledToFill()
                         .frame(maxWidth: geo.size.width)
                         .clipped()
-                }
             }
             
-            Text(title.capitalized)
+            Text(asset.title.capitalized)
                 .font(.custom("Tangerine-Bold", size: 40, relativeTo: .largeTitle))
                 .italic()
                 .underline()
@@ -37,5 +34,6 @@ struct DreamAsset: View {
 }
 
 #Preview {
-    DreamAsset(title: "house", picture: .house)
+    let asset = Asset(title: "House", image: UIImage(resource: .house))
+    DreamAsset(asset: asset)
 }

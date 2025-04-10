@@ -51,7 +51,7 @@ struct EditDreamView: View {
                 Button {
                     if let image, !dream.isEmpty {
                         asset.title = dream
-                        asset.image = image
+                        asset.imageData = image.pngData()!
                         try? context.save()
                     }
                     dismiss()
