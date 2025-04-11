@@ -39,8 +39,24 @@ struct SingleHabit: View {
                 Spacer()
                 
                 Button {
-                    if !habit.datesCompleted.contains(selectedDate) {
-                        habit.datesCompleted.append(selectedDate)
+                    let selectedDay = Calendar.current.startOfDay(for: selectedDate)
+                    habit.datesCompleted.removeAll {
+                        Calendar.current.isDate(Calendar.current.startOfDay(for: $0), inSameDayAs: selectedDay)
+                    }
+                    
+                    print(habit.datesCompleted)
+                } label: {
+                    Text("Undone")
+                }
+                .buttonStyle(.bordered)
+                
+                Button {
+                    let selectedDay = Calendar.current.startOfDay(for: selectedDate)
+                    let alreadyDone = habit.datesCompleted.contains {
+                        Calendar.current.isDate(Calendar.current.startOfDay(for: $0), inSameDayAs: selectedDay)
+                    }
+                    if !alreadyDone {
+                        habit.datesCompleted.append(selectedDay)
                     }
                     
                     print(habit.datesCompleted)

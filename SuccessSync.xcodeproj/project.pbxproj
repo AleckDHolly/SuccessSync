@@ -22,6 +22,7 @@
 		AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */; };
 		AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBE2DA761AD009F7A2A /* Goal.swift */; };
 		AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */; };
+		AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DF142DA887F7009F7A2A /* PopUpView.swift */; };
 		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
 		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
 		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
@@ -47,6 +48,7 @@
 		AD35DEBC2DA72F53009F7A2A /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		AD35DEBE2DA761AD009F7A2A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotes.swift; sourceTree = "<group>"; };
+		AD35DF142DA887F7009F7A2A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
 		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 			children = (
 				AD1436E12D9CC6B800A13929 /* Home */,
 				AD5BDA292DA332D800CF1B68 /* Habits */,
-				AD1436DB2D9CBCF900A13929 /* GoalsView.swift */,
+				AD35DF132DA887C8009F7A2A /* Goals */,
 				AD1436DD2D9CBD1100A13929 /* FinanceView.swift */,
 				AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */,
 			);
@@ -147,6 +149,15 @@
 				AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AD35DF132DA887C8009F7A2A /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				AD1436DB2D9CBCF900A13929 /* GoalsView.swift */,
+				AD35DF142DA887F7009F7A2A /* PopUpView.swift */,
+			);
+			path = Goals;
 			sourceTree = "<group>";
 		};
 		AD5BDA292DA332D800CF1B68 /* Habits */ = {
@@ -249,6 +260,7 @@
 				AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */,
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
+				AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */,
 				AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */,
 				AD35DEBD2DA72F53009F7A2A /* AddHabitView.swift in Sources */,
 				AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */,

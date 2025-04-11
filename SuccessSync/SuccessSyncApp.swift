@@ -15,6 +15,6 @@ struct SuccessSyncApp: App {
             ContentView()
                 .preferredColorScheme(.dark)
         }
-        .modelContainer(for: [Asset.self, Habit.self])
+        .modelContainer(for: [Asset.self, Habit.self, Goal.self])
     }
 }

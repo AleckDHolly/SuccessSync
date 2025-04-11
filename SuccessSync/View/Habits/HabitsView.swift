@@ -44,9 +44,7 @@ struct HabitsView: View {
                 
                 HStack {
                     Group {
-                        Text(Calendar.current.isDate(date, inSameDayAs: Date()) ? "Today" : date.formatted(date: .abbreviated, time: .omitted))
-                            .font(.largeTitle)
-                        Image(systemName: "pencil")
+                        Text(Calendar.current.isDate(date, inSameDayAs: Date()) ? "Today:" : "\(date.formatted(date: .abbreviated, time: .omitted)):")
                             .font(.largeTitle)
                     }
                     
@@ -70,8 +68,8 @@ struct HabitsView: View {
                     ContentUnavailableView("Add a habit to begin", systemImage: "heart.text.clipboard.fill", description: Text("It is now time for you to add the habits that will make you great."))
                         .background(.ultraThinMaterial)
                         .cornerRadius(10)
-                        .padding(.vertical)
-                        .padding(.bottom, 75)
+                        .padding(.horizontal)
+                        .padding(.bottom, 100)
                 } else {
                     ScrollView(showsIndicators: false) {
                         LazyVStack {
@@ -79,8 +77,8 @@ struct HabitsView: View {
                                 SingleHabit(habit: habit)
                             }
                         }
-                        .padding(.vertical)
-                        .padding(.bottom, 75)
+                        .padding(.horizontal)
+                        .padding(.bottom, 100)
                     }
                 }
             }

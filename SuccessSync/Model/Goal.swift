@@ -13,12 +13,12 @@ import SwiftData
 class Goal {
     var id = UUID()
     var title: String
-    var subtitle: String?
+    var reason: String?
     var dueDate: Date
     
-    init(title: String, dueDate: Date, subtitle: String?) {
+    init(title: String, dueDate: Date, reason: String? = nil) {
         self.title = title
         self.dueDate = dueDate
-        self.subtitle = subtitle
+        self.reason = reason
     }
 }

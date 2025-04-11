@@ -28,7 +28,7 @@ struct AddHabitView: View {
                     dismiss()
                 } label: {
                     Text("x")
-                        .font(.largeTitle)
+                        .font(.title)
                         .padding()
                         .background(.thinMaterial)
                         .clipShape(Circle())
@@ -41,7 +41,7 @@ struct AddHabitView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primary, lineWidth: 3)
+                        .stroke(Color.primary, lineWidth: 1.5)
                 )
                 .padding()
             
@@ -88,6 +88,7 @@ struct AddHabitView: View {
                     dismiss()
                 } label: {
                     Text("Delete the habit: \"\(habitToEdit.name)\"")
+                        .multilineTextAlignment(.leading)
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.red)
