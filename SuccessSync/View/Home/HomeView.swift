@@ -32,13 +32,12 @@ struct HomeView: View {
                 
                 if assets.isEmpty {
                     ContentUnavailableView("Add a dream to begin", systemImage: "figure.run", description: Text("It is now time for you to add the dreams that will motivate you."))
-                        .background(.ultraThinMaterial)
-                        .cornerRadius(10)
                 } else {
                     TabView {
                         ForEach(assets) { asset in
                             DreamAsset(asset: asset)
                                 .frame(maxHeight: .infinity)
+                                .padding(.horizontal, 5)
                                 .onTapGesture {
                                     self.asset = asset
                                 }
