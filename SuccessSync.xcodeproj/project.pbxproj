@@ -14,8 +14,6 @@
 		AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436D72D9CBCDD00A13929 /* HomeView.swift */; };
 		AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436D92D9CBCEC00A13929 /* HabitsView.swift */; };
 		AD1436DC2D9CBCF900A13929 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DB2D9CBCF900A13929 /* GoalsView.swift */; };
-		AD1436DE2D9CBD1100A13929 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DD2D9CBD1100A13929 /* FinanceView.swift */; };
-		AD1436E02D9CBD1F00A13929 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */; };
 		AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */; };
 		AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1436E42D9CD2A100A13929 /* Asset.swift */; };
 		AD35DEBB2DA721C3009F7A2A /* EditDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */; };
@@ -23,6 +21,7 @@
 		AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBE2DA761AD009F7A2A /* Goal.swift */; };
 		AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */; };
 		AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DF142DA887F7009F7A2A /* PopUpView.swift */; };
+		AD4D80A82DA94AEF00BBCA33 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D80A72DA94AEF00BBCA33 /* Launch Screen.storyboard */; };
 		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
 		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
 		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
@@ -40,8 +39,6 @@
 		AD1436D72D9CBCDD00A13929 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AD1436D92D9CBCEC00A13929 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
 		AD1436DB2D9CBCF900A13929 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
-		AD1436DD2D9CBD1100A13929 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
-		AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AD1436E22D9CC6CD00A13929 /* DreamAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamAsset.swift; sourceTree = "<group>"; };
 		AD1436E42D9CD2A100A13929 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		AD35DEBA2DA721C3009F7A2A /* EditDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDreamView.swift; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		AD35DEBE2DA761AD009F7A2A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotes.swift; sourceTree = "<group>"; };
 		AD35DF142DA887F7009F7A2A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		AD4D80A72DA94AEF00BBCA33 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
 		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -111,17 +109,8 @@
 				AD1436E12D9CC6B800A13929 /* Home */,
 				AD5BDA292DA332D800CF1B68 /* Habits */,
 				AD35DF132DA887C8009F7A2A /* Goals */,
-				AD1436DD2D9CBD1100A13929 /* FinanceView.swift */,
-				AD1436DF2D9CBD1F00A13929 /* SettingsView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AD1436CE2D9CBC9600A13929 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		AD1436D22D9CBC9600A13929 /* SuccessSync */ = {
@@ -132,10 +121,10 @@
 				AD1436CC2D9CBC9600A13929 /* Preview Content */,
 				AD1436CA2D9CBC9600A13929 /* Model */,
 				AD1436CD2D9CBC9600A13929 /* View */,
-				AD1436CE2D9CBC9600A13929 /* Controller */,
 				AD1436CF2D9CBC9600A13929 /* Assets.xcassets */,
 				AD1436D02D9CBC9600A13929 /* ContentView.swift */,
 				AD1436D12D9CBC9600A13929 /* SuccessSyncApp.swift */,
+				AD4D80A72DA94AEF00BBCA33 /* Launch Screen.storyboard */,
 			);
 			path = SuccessSync;
 			sourceTree = "<group>";
@@ -234,6 +223,7 @@
 			files = (
 				AD1436D52D9CBC9600A13929 /* Preview Assets.xcassets in Resources */,
 				AD1436D62D9CBC9600A13929 /* Assets.xcassets in Resources */,
+				AD4D80A82DA94AEF00BBCA33 /* Launch Screen.storyboard in Resources */,
 				AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,11 +237,9 @@
 			files = (
 				AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */,
 				AD5BDA3E2DA6121900CF1B68 /* Color+Extension.swift in Sources */,
-				AD1436E02D9CBD1F00A13929 /* SettingsView.swift in Sources */,
 				AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */,
 				AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */,
 				AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */,
-				AD1436DE2D9CBD1100A13929 /* FinanceView.swift in Sources */,
 				AD1436DC2D9CBCF900A13929 /* GoalsView.swift in Sources */,
 				AD35DEBB2DA721C3009F7A2A /* EditDreamView.swift in Sources */,
 				AD1436E32D9CC6CD00A13929 /* DreamAsset.swift in Sources */,
@@ -402,6 +390,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SuccessSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuccessSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,6 +426,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SuccessSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SuccessSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

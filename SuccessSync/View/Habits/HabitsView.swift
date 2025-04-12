@@ -12,8 +12,10 @@ struct HabitsView: View {
     @State private var date: Date = Date()
     @Query private var habits: [Habit]
     @State private var addHabitSheet: Bool = false
-    @State private var editHAbitSheet: Bool = false
+    @State private var editHabitSheet: Bool = false
     @State private var calendarId: Int = 0
+    @State private var habit: Habit?
+    @Environment(\.modelContext) private var context
     
     var completedHabitsCount: Int {
         habits.filter { habit in
@@ -22,7 +24,7 @@ struct HabitsView: View {
             })
         }.count
     }
-
+    
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -74,7 +76,9 @@ struct HabitsView: View {
                     ScrollView(showsIndicators: false) {
                         LazyVStack {
                             ForEach(habits) { habit in
-                                SingleHabit(habit: habit)
+                                SingleHabit(habit: .constant(habit), editHabit: $editHabitSheet) {
+                                    self.habit = habit
+                                }
                             }
                         }
                         .padding(.horizontal)
@@ -96,9 +100,14 @@ struct HabitsView: View {
             }
             .buttonStyle(.plain)
         }
-        .fullScreenCover(isPresented: $addHabitSheet, content: {
+        .sheet(isPresented: $addHabitSheet) {
             AddHabitView()
-        })
+                .presentationDetents([.medium])
+        }
+        .sheet(item: $habit) { habit in
+            AddHabitView(habit: habit.name, selectedColor: habit.color, isBeingEdited: true, habitToEdit: habit)
+                .presentationDetents([.medium])
+        }
     }
 }
 

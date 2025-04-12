@@ -13,7 +13,6 @@ struct AddHabitView: View {
     @FocusState private var isFocused: Bool
     @State var selectedColor: Color = .blue
     @Environment(\.modelContext) private var context
-    @Environment(\.dismiss) private var dismiss
     
     @State var isBeingEdited: Bool?
     @State var habitToEdit: Habit?
@@ -21,21 +20,6 @@ struct AddHabitView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Text("x")
-                        .font(.title)
-                        .padding()
-                        .background(.thinMaterial)
-                        .clipShape(Circle())
-                        .padding()
-                }
-            }
-            
             TextField("Add a habit", text: $habit)
                 .focused($isFocused)
                 .padding()
@@ -43,66 +27,69 @@ struct AddHabitView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.primary, lineWidth: 1.5)
                 )
-                .padding()
+                .padding(.top, 20)
             
             
             ColorPicker(selection: $selectedColor) {
                 Text("Select a color:")
                     .font(.title2)
             }
-                .padding()
+            .padding(.vertical)
+                .padding(.vertical, 20)
             
-            Button {
-                if isBeingEdited == true {
-                    if !habit.isEmpty {
-                        habitToEdit?.name = habit
-                        habitToEdit?.colorHex = selectedColor.toHex()
+            HStack {
+                if let habitToEdit, isBeingEdited == true {
+                    Button {
+                        context.delete(habitToEdit)
                         try? context.save()
-                        print(habits)
+                    } label: {
+                        Text("Delete")
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(.red)
+                            .padding()
+                            .frame(maxWidth: .infinity)
                     }
-                } else {
-                    if !habit.isEmpty {
-                        let habit = Habit(name: habit, color: selectedColor)
-                        context.insert(habit)
-                        try? context.save()
-                        print(habits)
-                    }
-                }
-                dismiss()
-            } label: {
-                Text("Save")
-                    .font(.title2)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
-            }
-            .buttonStyle(.plain)
-            
-            if let habitToEdit, isBeingEdited == true {
-                Button {
-                    context.delete(habitToEdit)
-                    try? context.save()
+                    .buttonStyle(.plain)
                     
-                    dismiss()
+                    Divider()
+                        .frame(maxHeight: .infinity)
+                }
+                
+                Button {
+                    if isBeingEdited == true {
+                        if !habit.isEmpty {
+                            habitToEdit?.name = habit
+                            habitToEdit?.colorHex = selectedColor.toHex()
+                            try? context.save()
+                            print(habits)
+                        }
+                    } else {
+                        if !habit.isEmpty {
+                            let habit = Habit(name: habit, color: selectedColor)
+                            context.insert(habit)
+                            try? context.save()
+                            print(habits)
+                        }
+                    }
                 } label: {
-                    Text("Delete the habit: \"\(habitToEdit.name)\"")
-                        .multilineTextAlignment(.leading)
+                    Text("Save")
+                        .font(.title2)
+                        .foregroundStyle(.blue)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(.red)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding()
                 }
                 .buttonStyle(.plain)
             }
+            .frame(height: 50)
+            .background(.ultraThinMaterial)
+            .cornerRadius(10)
             
-            Spacer()
+            
         }
         .onAppear {
             isFocused = true
         }
+        .padding()
     }
 }
 

@@ -13,7 +13,6 @@ struct PopUpView: View {
     @State var date: Date = Date()
     @State var reason: String = ""
     @Environment(\.modelContext) private var context
-    @Binding var stillAddingGoal: Bool
     @State var currentGoal: Goal?
     
     var body: some View {
@@ -24,7 +23,7 @@ struct PopUpView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.primary, lineWidth: 1.5)
                 )
-                .padding()
+                .padding(.vertical)
             
             TextField("Add your reason..", text: $reason, axis: .vertical)
                 .lineLimit(4)
@@ -33,56 +32,37 @@ struct PopUpView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.primary, lineWidth: 1.5)
                 )
-                .padding(.horizontal)
                 .padding(.bottom)
             
-            DatePicker("Add a deadline", selection: $date, displayedComponents: .date)
+            DatePicker("Add a deadline:", selection: $date, displayedComponents: .date)
                 .datePickerStyle(.automatic)
-                .padding(.horizontal)
             
             HStack {
-                Button("Cancel", role: .cancel) {
-                    stillAddingGoal = false
-                }
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .center)
-                
-                
-                Divider()
-                    .frame(maxHeight: .infinity)
-                
                 Button(currentGoal != nil ? "Edit Goal" : "Add Goal") {
                     if let currentGoal, !goal.isEmpty {
                         currentGoal.title = goal
                         currentGoal.reason = reason
                         currentGoal.dueDate = date
-                    } else {
-                        let goal = Goal(title: goal, dueDate: date, reason: reason)
-                        context.insert(goal)
+                    } else  {
+                        if !goal.isEmpty {
+                            let goal = Goal(title: goal, dueDate: date, reason: reason)
+                            context.insert(goal)
+                        }
                     }
-                    stillAddingGoal = false
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .center)
             }
             .frame(height: 50)
             .background(.ultraThickMaterial)
+            .cornerRadius(10)
             .padding(.top)
             
         }
-        .background(.ultraThinMaterial)
-        .cornerRadius(10)
         .padding(.horizontal)
-    }
-    
-    func deleteGoal() {
-        if let currentGoal {
-            context.delete(currentGoal)
-            stillAddingGoal = false
-        }
     }
 }
 
 #Preview {
-    PopUpView(stillAddingGoal: .constant(false))
+    PopUpView()
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SingleHabit: View {
-    @State var habit: Habit
+    @Binding var habit: Habit
     @State var selectedDate: Date = Date()
     @Environment(\.modelContext) private var context
-    @State private var editHabit: Bool = false
+    @Binding var editHabit: Bool
+    let passHabit: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,6 +28,7 @@ struct SingleHabit: View {
                 
                 Button {
                     editHabit = true
+                    passHabit()
                 } label: {
                     Label("Edit", systemImage: "pencil")
                 }
@@ -70,13 +72,10 @@ struct SingleHabit: View {
         .background(habit.color.opacity(0.2))
         .background(.ultraThinMaterial.opacity(0.8))
         .cornerRadius(10)
-        .fullScreenCover(isPresented: $editHabit, content: {
-            AddHabitView(habit: habit.name, selectedColor: habit.color, isBeingEdited: true, habitToEdit: habit)
-        })
     }
 }
 
 #Preview {
     let habit = Habit(name: "Brush teeth", color: .cyan)
-    SingleHabit(habit: habit)
+    SingleHabit(habit: .constant(habit), editHabit: .constant(false), passHabit: {})
 }
