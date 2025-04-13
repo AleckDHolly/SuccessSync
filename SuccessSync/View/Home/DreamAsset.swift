@@ -33,7 +33,7 @@ struct DreamAsset: View {
     }
 }
 
-#Preview {
-    let asset = Asset(title: "House", image: UIImage(resource: .house))
-    DreamAsset(asset: asset)
-}
+//#Preview {
+//    let asset = Asset(title: "House", image: UIImage(resource: .house))
+//    DreamAsset(asset: asset)
+//}

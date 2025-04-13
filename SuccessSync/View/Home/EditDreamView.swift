@@ -113,7 +113,7 @@ struct EditDreamView: View {
     }
 }
 
-#Preview {
-    let asset = Asset(title: "Car", image: UIImage(resource: .car))
-    EditDreamView(dream: asset.title, image: asset.image, asset: asset)
-}
+//#Preview {
+//    let asset = Asset(title: "Car", image: UIImage(resource: .car))
+//    EditDreamView(dream: asset.title, image: asset.image, asset: asset)
+//}

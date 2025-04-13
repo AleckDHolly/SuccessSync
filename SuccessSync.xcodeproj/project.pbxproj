@@ -21,13 +21,13 @@
 		AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEBE2DA761AD009F7A2A /* Goal.swift */; };
 		AD35DEC12DA771E6009F7A2A /* AllQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */; };
 		AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35DF142DA887F7009F7A2A /* PopUpView.swift */; };
-		AD4D80AA2DAB56C300BBCA33 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4D80A92DAB56C300BBCA33 /* Launch Screen.storyboard */; };
 		AD5BDA2B2DA332F400CF1B68 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2A2DA332F400CF1B68 /* Habit.swift */; };
 		AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */; };
 		AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA322DA3460500CF1B68 /* CalendarView.swift */; };
 		AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */; };
 		AD5BDA382DA39F1600CF1B68 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */; };
 		AD5BDA3E2DA6121900CF1B68 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */; };
+		ADD19FC82DAB5F7000771974 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,6 @@
 		AD35DEBE2DA761AD009F7A2A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotes.swift; sourceTree = "<group>"; };
 		AD35DF142DA887F7009F7A2A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
-		AD4D80A92DAB56C300BBCA33 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AD5BDA2A2DA332F400CF1B68 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		AD5BDA2C2DA3334600CF1B68 /* SingleHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHabit.swift; sourceTree = "<group>"; };
 		AD5BDA322DA3460500CF1B68 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		AD5BDA362DA39C9C00CF1B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
 		AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,6 @@
 		AD1436D22D9CBC9600A13929 /* SuccessSync */ = {
 			isa = PBXGroup;
 			children = (
-				AD4D80A92DAB56C300BBCA33 /* Launch Screen.storyboard */,
 				AD5BDA362DA39C9C00CF1B68 /* Info.plist */,
 				AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */,
 				AD1436CC2D9CBC9600A13929 /* Preview Content */,
@@ -125,6 +124,7 @@
 				AD1436CF2D9CBC9600A13929 /* Assets.xcassets */,
 				AD1436D02D9CBC9600A13929 /* ContentView.swift */,
 				AD1436D12D9CBC9600A13929 /* SuccessSyncApp.swift */,
+				ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */,
 			);
 			path = SuccessSync;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			files = (
 				AD1436D52D9CBC9600A13929 /* Preview Assets.xcassets in Resources */,
 				AD1436D62D9CBC9600A13929 /* Assets.xcassets in Resources */,
-				AD4D80AA2DAB56C300BBCA33 /* Launch Screen.storyboard in Resources */,
+				ADD19FC82DAB5F7000771974 /* Launch Screen.storyboard in Resources */,
 				AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuccessSync/Preview Content\"";
@@ -394,7 +395,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -420,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SuccessSync/Preview Content\"";
@@ -430,7 +432,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
