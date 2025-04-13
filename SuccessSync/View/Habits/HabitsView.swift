@@ -79,9 +79,9 @@ struct HabitsView: View {
                                     SingleHabit(habit: .constant(habit), editHabit: $editHabitSheet) {
                                         self.habit = habit
                                     }
+                                    .padding(.horizontal, 10)
                                 }
                             }
-                            .padding(.horizontal)
                             .padding(.bottom, 100)
                         }
                     }

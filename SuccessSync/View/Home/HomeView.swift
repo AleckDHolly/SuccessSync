@@ -14,6 +14,7 @@ struct HomeView: View {
     @State private var editDreamSheet: Bool = false
     @State private var asset: Asset?
     @Query(sort: \Asset.createdAt) private var assets: [Asset]
+    @AppStorage("firstTime") var isFirstTime: Bool = true
     
     let randomElement: Int = Int.random(in: 0..<allQuotes.count)
     
@@ -65,6 +66,9 @@ struct HomeView: View {
                 EditDreamView(dream: asset.title, image: asset.image, asset: asset)
                     .presentationDetents([.medium])
             }
+        }
+        .fullScreenCover(isPresented: $isFirstTime) {
+            OnboardingView()
         }
     }
 }

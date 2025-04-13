@@ -6,5 +6,7 @@
 	<array>
 		<string>Tangerine-Bold.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>SuccessSync needs to access your photo library in order to associate an image with your dreams.</string>
 </dict>
 </plist>

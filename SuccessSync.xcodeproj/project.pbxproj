@@ -27,8 +27,28 @@
 		AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */; };
 		AD5BDA382DA39F1600CF1B68 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */; };
 		AD5BDA3E2DA6121900CF1B68 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */; };
+		ADA55C1C2DAB75BC0034E5C2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = ADA55C1B2DAB75BC0034E5C2 /* Lottie */; };
+		ADA55C1E2DAB76F30034E5C2 /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA55C1D2DAB76F30034E5C2 /* 2.json */; };
 		ADD19FC82DAB5F7000771974 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */; };
+		ADD19FD02DAB6F4B00771974 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD19FCF2DAB6F4B00771974 /* OnboardingView.swift */; };
+		ADD19FD22DAB6F5900771974 /* SingleOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD19FD12DAB6F5900771974 /* SingleOnboarding.swift */; };
+		ADD19FD42DAB6F8E00771974 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD19FD32DAB6F8E00771974 /* Onboarding.swift */; };
+		ADD19FD72DAB722100771974 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FD62DAB722100771974 /* 3.json */; };
+		ADD19FD92DAB723200771974 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FD82DAB723100771974 /* 1.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ADA55C192DAB754B0034E5C2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD1436AD2D9C55A600A13929 /* SuccessSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuccessSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +73,13 @@
 		AD5BDA362DA39C9C00CF1B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD5BDA372DA39F1600CF1B68 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
 		AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		ADA55C1D2DAB76F30034E5C2 /* 2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
 		ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		ADD19FCF2DAB6F4B00771974 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		ADD19FD12DAB6F5900771974 /* SingleOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOnboarding.swift; sourceTree = "<group>"; };
+		ADD19FD32DAB6F8E00771974 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		ADD19FD62DAB722100771974 /* 3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
+		ADD19FD82DAB723100771974 /* 1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA55C1C2DAB75BC0034E5C2 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +118,7 @@
 				AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */,
 				AD35DEBE2DA761AD009F7A2A /* Goal.swift */,
 				AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */,
+				ADD19FD32DAB6F8E00771974 /* Onboarding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +134,7 @@
 		AD1436CD2D9CBC9600A13929 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ADD19FC92DAB6D3800771974 /* Onboarding */,
 				AD1436E12D9CC6B800A13929 /* Home */,
 				AD5BDA292DA332D800CF1B68 /* Habits */,
 				AD35DF132DA887C8009F7A2A /* Goals */,
@@ -122,6 +151,7 @@
 				AD1436CA2D9CBC9600A13929 /* Model */,
 				AD1436CD2D9CBC9600A13929 /* View */,
 				AD1436CF2D9CBC9600A13929 /* Assets.xcassets */,
+				ADD19FD52DAB720C00771974 /* Lotties */,
 				AD1436D02D9CBC9600A13929 /* ContentView.swift */,
 				AD1436D12D9CBC9600A13929 /* SuccessSyncApp.swift */,
 				ADD19FC72DAB5F7000771974 /* Launch Screen.storyboard */,
@@ -160,6 +190,25 @@
 			path = Habits;
 			sourceTree = "<group>";
 		};
+		ADD19FC92DAB6D3800771974 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				ADD19FCF2DAB6F4B00771974 /* OnboardingView.swift */,
+				ADD19FD12DAB6F5900771974 /* SingleOnboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		ADD19FD52DAB720C00771974 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				ADD19FD82DAB723100771974 /* 1.json */,
+				ADA55C1D2DAB76F30034E5C2 /* 2.json */,
+				ADD19FD62DAB722100771974 /* 3.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +219,7 @@
 				AD1436A92D9C55A600A13929 /* Sources */,
 				AD1436AA2D9C55A600A13929 /* Frameworks */,
 				AD1436AB2D9C55A600A13929 /* Resources */,
+				ADA55C192DAB754B0034E5C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +227,7 @@
 			);
 			name = SuccessSync;
 			packageProductDependencies = (
+				ADA55C1B2DAB75BC0034E5C2 /* Lottie */,
 			);
 			productName = SuccessSync;
 			productReference = AD1436AD2D9C55A600A13929 /* SuccessSync.app */;
@@ -206,6 +257,9 @@
 			);
 			mainGroup = AD1436A42D9C55A600A13929;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ADA55C1A2DAB75BC0034E5C2 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AD1436AE2D9C55A600A13929 /* Products */;
 			projectDirPath = "";
@@ -221,8 +275,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD19FD72DAB722100771974 /* 3.json in Resources */,
+				ADD19FD92DAB723200771974 /* 1.json in Resources */,
 				AD1436D52D9CBC9600A13929 /* Preview Assets.xcassets in Resources */,
 				AD1436D62D9CBC9600A13929 /* Assets.xcassets in Resources */,
+				ADA55C1E2DAB76F30034E5C2 /* 2.json in Resources */,
 				ADD19FC82DAB5F7000771974 /* Launch Screen.storyboard in Resources */,
 				AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */,
 			);
@@ -237,7 +294,9 @@
 			files = (
 				AD1436E52D9CD2A100A13929 /* Asset.swift in Sources */,
 				AD5BDA3E2DA6121900CF1B68 /* Color+Extension.swift in Sources */,
+				ADD19FD42DAB6F8E00771974 /* Onboarding.swift in Sources */,
 				AD5BDA332DA3460500CF1B68 /* CalendarView.swift in Sources */,
+				ADD19FD02DAB6F4B00771974 /* OnboardingView.swift in Sources */,
 				AD5BDA2D2DA3334600CF1B68 /* SingleHabit.swift in Sources */,
 				AD1436D82D9CBCDD00A13929 /* HomeView.swift in Sources */,
 				AD1436DC2D9CBCF900A13929 /* GoalsView.swift in Sources */,
@@ -247,6 +306,7 @@
 				AD5BDA382DA39F1600CF1B68 /* AddDreamView.swift in Sources */,
 				AD1436DA2D9CBCEC00A13929 /* HabitsView.swift in Sources */,
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
+				ADD19FD22DAB6F5900771974 /* SingleOnboarding.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
 				AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */,
 				AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */,
@@ -475,6 +535,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADA55C1A2DAB75BC0034E5C2 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADA55C1B2DAB75BC0034E5C2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADA55C1A2DAB75BC0034E5C2 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD1436A52D9C55A600A13929 /* Project object */;
 }
