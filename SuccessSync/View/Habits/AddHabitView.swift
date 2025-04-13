@@ -78,12 +78,13 @@ struct AddHabitView: View {
                             .foregroundStyle(.blue)
                             .padding()
                             .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(10)
                     }
                     .buttonStyle(.plain)
                 }
-                .frame(height: 50)
-                .background(.ultraThinMaterial)
-                .cornerRadius(10)
+               
                 
                 
             }
