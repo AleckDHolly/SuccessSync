@@ -57,11 +57,12 @@ struct PopUpView: View {
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .frame(height: 50)
-                    .background(.ultraThickMaterial)
-                    .cornerRadius(10)
-                    .padding(.bottom)
                 }
+                .frame(height: 50)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .padding(.bottom)
+                
             }
             .padding(.horizontal)
             .toolbar {
