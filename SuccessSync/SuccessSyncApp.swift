@@ -7,13 +7,34 @@
 
 import SwiftUI
 import SwiftData
+import GoogleMobileAds
+
+//class AppDelegate: UIResponder, UIApplicationDelegate {
+//    
+//    func application(_ application: UIApplication,
+//                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        
+//        MobileAds.shared.start(completionHandler: nil)
+//        
+//        return true
+//    }
+//    
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        // Show the app open ad when the app is foregrounded.
+//        AppOpenAdManager.shared.showAdIfAvailable()
+//    }
+//}
 
 @main
 struct SuccessSyncApp: App {
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Asset.self, Habit.self, Goal.self])
+        .modelContainer(for: [Asset.self, Habit.self, Goal.self, Journal.self])
     }
 }
+
+

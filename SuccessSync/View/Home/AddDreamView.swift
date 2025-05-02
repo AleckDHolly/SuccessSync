@@ -29,13 +29,22 @@ struct AddDreamView: View {
                     .padding()
                 
                 if photos == .denied {
-                    Text("Please allow access to your photos to add a picture")
-                        .foregroundStyle(Color.primary)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .padding()
+                    Button {
+                        if let appSettings = URL(string: UIApplication.openSettingsURLString),
+                           UIApplication.shared.canOpenURL(appSettings) {
+                            UIApplication.shared.open(appSettings)
+                        }
+                    } label: {
+                        Text("Please click to allow access to your photos to add a picture")
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(Color.primary)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding()
+                    }
+                    
                 } else {
                     PhotosPicker(selection: $selected, matching: .images) {
                         if let image {

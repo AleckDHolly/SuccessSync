@@ -17,6 +17,7 @@ struct Onboarding: Identifiable, Equatable {
         .init(title: "Welcome to SuccessSync", subtitle: "Add your life dreams and pictures to motivate you everyday.", lottie: "1"),
         .init(title: "Habits", subtitle: "Add the everyday habits to help you improve your life.", lottie: "2"),
         .init(title: "Goals", subtitle: "Add your goals and why you want to achieve them.", lottie: "3"),
+        .init(title: "Journal", subtitle: "Add your journal entries to have a peace of mind", lottie: "4"),
         .init(title: "Get Started", subtitle: "Start your journey now.", lottie: nil),
     ]
 }

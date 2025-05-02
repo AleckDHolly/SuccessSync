@@ -25,6 +25,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Goals", systemImage: "list.bullet.clipboard")
                 }
+            
+            AllJournals()
+                .tabItem {
+                    Label("Journal", systemImage: "book.pages.fill")
+                }
         }
     }
 }
