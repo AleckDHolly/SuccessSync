@@ -25,7 +25,11 @@ struct SingleJournal: View {
                             get: {journal?.title ?? title },
                             set: { newValue in
                                 if journal != nil {
-                                    journal?.title = newValue
+                                    if newValue.isEmpty {
+                                        journal?.title = dateString
+                                    } else {
+                                        journal?.title = newValue
+                                    }
                                 } else {
                                     title = newValue
                                 }

@@ -28,7 +28,12 @@ struct AllJournals: View {
                                         Text(journal.title)
                                             .font(.title2)
                                             .fontWeight(.semibold)
-                                        Text("Added on: \(journal.date.formatted(date: .abbreviated, time: .omitted))")
+                                        
+                                        Text(journal.content)
+                                            .lineLimit(1)
+                                            .truncationMode(.tail)
+                                        
+                                        Text("Added/Updated on: \(journal.date.formatted(date: .abbreviated, time: .omitted))")
                                             .foregroundStyle(.gray)
                                     }
                                 }

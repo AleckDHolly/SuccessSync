@@ -36,11 +36,12 @@
 		ADD19FD72DAB722100771974 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FD62DAB722100771974 /* 3.json */; };
 		ADD19FD92DAB723200771974 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADD19FD82DAB723100771974 /* 1.json */; };
 		D09A7BBC2DC3BB6500A4FE46 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D09A7BBB2DC3BB6500A4FE46 /* GoogleMobileAds */; };
-		D09A7BBF2DC3BD1C00A4FE46 /* AppOpenAddManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAddManager.swift */; };
+		D09A7BBF2DC3BD1C00A4FE46 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAdManager.swift */; };
 		D09A7BC12DC522CB00A4FE46 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A7BC02DC522CB00A4FE46 /* Journal.swift */; };
 		D09A7BC42DC5237B00A4FE46 /* AllJournals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A7BC32DC5237B00A4FE46 /* AllJournals.swift */; };
 		D09A7BC62DC5238A00A4FE46 /* SingleJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A7BC52DC5238A00A4FE46 /* SingleJournal.swift */; };
 		D09A7BC82DC53BED00A4FE46 /* 4.json in Resources */ = {isa = PBXBuildFile; fileRef = D09A7BC72DC53BED00A4FE46 /* 4.json */; };
+		D09A7BCA2DC5A00200A4FE46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D09A7BC92DC59FFB00A4FE46 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,11 +87,12 @@
 		ADD19FD32DAB6F8E00771974 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		ADD19FD62DAB722100771974 /* 3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		ADD19FD82DAB723100771974 /* 1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
-		D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAddManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAddManager.swift; sourceTree = "<group>"; };
+		D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		D09A7BC02DC522CB00A4FE46 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		D09A7BC32DC5237B00A4FE46 /* AllJournals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllJournals.swift; sourceTree = "<group>"; };
 		D09A7BC52DC5238A00A4FE46 /* SingleJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleJournal.swift; sourceTree = "<group>"; };
 		D09A7BC72DC53BED00A4FE46 /* 4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 4.json; sourceTree = "<group>"; };
+		D09A7BC92DC59FFB00A4FE46 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		AD1436D22D9CBC9600A13929 /* SuccessSync */ = {
 			isa = PBXGroup;
 			children = (
+				D09A7BC92DC59FFB00A4FE46 /* .gitignore */,
 				AD5BDA362DA39C9C00CF1B68 /* Info.plist */,
 				AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */,
 				AD1436CC2D9CBC9600A13929 /* Preview Content */,
@@ -228,7 +231,7 @@
 		D09A7BBD2DC3BCF700A4FE46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAddManager.swift */,
+				D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAdManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				AD1436D62D9CBC9600A13929 /* Assets.xcassets in Resources */,
 				ADA55C1E2DAB76F30034E5C2 /* 2.json in Resources */,
 				ADD19FC82DAB5F7000771974 /* Launch Screen.storyboard in Resources */,
+				D09A7BCA2DC5A00200A4FE46 /* .gitignore in Resources */,
 				AD5BDA352DA39C4F00CF1B68 /* Tangerine-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +350,7 @@
 				D09A7BC42DC5237B00A4FE46 /* AllJournals.swift in Sources */,
 				AD1436D32D9CBC9600A13929 /* ContentView.swift in Sources */,
 				ADD19FD22DAB6F5900771974 /* SingleOnboarding.swift in Sources */,
-				D09A7BBF2DC3BD1C00A4FE46 /* AppOpenAddManager.swift in Sources */,
+				D09A7BBF2DC3BD1C00A4FE46 /* AppOpenAdManager.swift in Sources */,
 				AD1436D42D9CBC9600A13929 /* SuccessSyncApp.swift in Sources */,
 				AD35DF152DA887F7009F7A2A /* PopUpView.swift in Sources */,
 				AD35DEBF2DA761AD009F7A2A /* Goal.swift in Sources */,
