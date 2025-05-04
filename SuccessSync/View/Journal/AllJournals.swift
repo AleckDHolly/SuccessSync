@@ -9,33 +9,30 @@ import SwiftUI
 import SwiftData
 
 struct AllJournals: View {
-    @Query(sort: \Journal.date, order: .reverse) private var journals: [Journal]
+    @Bindable var journalFolder: JournalFolder
     @Environment(\.modelContext) private var context
-    
+
     var body: some View {
         NavigationStack {
             Group {
-                if journals.isEmpty {
-                    ContentUnavailableView("Add your first journal entry!", systemImage: "figure.mind.and.body.circle", description: Text("In order to have a better peace of mind, please add your first journal entry."))
+                if journalFolder.journals.isEmpty {
+                    ContentUnavailableView("No journals yet", systemImage: "square.and.pencil", description: Text("Add your first journal."))
                 } else {
                     List {
-                        ForEach(journals) { journal in
-                            Group {
-                                NavigationLink {
-                                    SingleJournal(journal: journal)
-                                } label: {
-                                    VStack(alignment: .leading) {
-                                        Text(journal.title)
-                                            .font(.title2)
-                                            .fontWeight(.semibold)
-                                        
-                                        Text(journal.content)
-                                            .lineLimit(1)
-                                            .truncationMode(.tail)
-                                        
-                                        Text("Added/Updated on: \(journal.date.formatted(date: .abbreviated, time: .omitted))")
-                                            .foregroundStyle(.gray)
-                                    }
+                        ForEach(journalFolder.journals.sorted { $0.date > $1.date }) { journal in
+                            NavigationLink {
+                                SingleJournal(journal: journal)
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text(journal.title)
+                                        .font(.title3)
+                                        .bold()
+                                    Text(journal.content)
+                                        .lineLimit(1)
+                                        .truncationMode(.tail)
+                                    Text(journal.date.formatted(date: .abbreviated, time: .omitted))
+                                        .font(.caption)
+                                        .foregroundStyle(.gray)
                                 }
                             }
                         }
@@ -43,11 +40,11 @@ struct AllJournals: View {
                     }
                 }
             }
-            .navigationTitle("Journal")
+            .navigationTitle(journalFolder.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 NavigationLink {
-                    SingleJournal()
+                    SingleJournal(journalFolder: journalFolder)
                 } label: {
                     Image(systemName: "plus")
                         .padding(.trailing)
@@ -55,15 +52,16 @@ struct AllJournals: View {
             }
         }
     }
-    
-    private func delete(at offsets: IndexSet) {
+
+    func delete(at offsets: IndexSet) {
         for index in offsets {
-            let journal = journals[index]
-            context.delete(journal)
+            context.delete(journalFolder.journals[index])
         }
     }
 }
 
+
+
 #Preview {
-    AllJournals()
+    AllJournals(journalFolder: JournalFolder(title: "Folder Title", journals: [Journal(title: "Title", content: "Content", date: Date())]) )
 }

@@ -26,7 +26,7 @@ struct ContentView: View {
                     Label("Goals", systemImage: "list.bullet.clipboard")
                 }
             
-            AllJournals()
+            JournalFolders()
                 .tabItem {
                     Label("Journal", systemImage: "book.pages.fill")
                 }

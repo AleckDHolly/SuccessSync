@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SingleJournal: View {
     @State var journal: Journal?
+    var journalFolder: JournalFolder?
     @State private var title: String = ""
     @State private var content: String = ""
     var dateString: String {
@@ -73,8 +74,13 @@ struct SingleJournal: View {
                         let newJournal = Journal(
                             title: title.isEmpty ? dateString : title,
                             content: content,
-                            date: Date()
+                            date: Date(),
+                            folder: journalFolder
                         )
+                        
+                        
+                        journalFolder?.journals.append(newJournal)
+                        
                         context.insert(newJournal)
                         journal = newJournal
                     } label: {

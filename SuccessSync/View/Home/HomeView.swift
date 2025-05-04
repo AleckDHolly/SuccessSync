@@ -15,6 +15,7 @@ struct HomeView: View {
     @State private var asset: Asset?
     @Query(sort: \Asset.createdAt) private var assets: [Asset]
     @AppStorage("firstTime") var isFirstTime: Bool = true
+    @State private var currentIndex: Int? = 0
     
     let randomElement: Int = Int.random(in: 0..<allQuotes.count)
     
@@ -34,17 +35,23 @@ struct HomeView: View {
                 if assets.isEmpty {
                     ContentUnavailableView("Add a dream to begin", systemImage: "figure.run", description: Text("It is now time for you to add the dreams that will motivate you."))
                 } else {
-                    TabView {
-                        ForEach(assets) { asset in
-                            DreamAsset(asset: asset)
-                                .frame(maxHeight: .infinity)
-                                .padding(.horizontal, 5)
-                                .onTapGesture {
-                                    self.asset = asset
-                                }
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(Array(assets.enumerated()), id: \.element.id) { index, asset in
+                                DreamAsset(asset: asset)
+                                    .frame(maxHeight: .infinity)
+                                    .containerRelativeFrame(.horizontal)
+                                    .id(index as Int?)
+                                    .onTapGesture {
+                                        self.asset = asset
+                                    }
+                            }
                         }
+                        .scrollTargetLayout()
                     }
-                    .tabViewStyle(.page)
+                    .scrollTargetBehavior(.viewAligned)
+                    .contentMargins(.horizontal, 15)
+                    .scrollPosition(id: $currentIndex)
                 }
             }
             .padding()

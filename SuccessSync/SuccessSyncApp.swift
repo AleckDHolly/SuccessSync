@@ -33,7 +33,7 @@ struct SuccessSyncApp: App {
                     AppOpenAdManager.shared.showAdIfAvailable()
                 }
         }
-        .modelContainer(for: [Asset.self, Habit.self, Goal.self, Journal.self])
+        .modelContainer(for: [Asset.self, Habit.self, Goal.self, Journal.self, JournalFolder.self])
     }
 }
 
