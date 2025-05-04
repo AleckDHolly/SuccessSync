@@ -22,9 +22,12 @@ struct JournalFolders: View {
     @State private var newNameForFolder: String = ""
     
     var allJournalsFolder: JournalFolder {
-        let all = JournalFolder(title: "All Journals", journals: allJournals)
-        return all
+        .allJournals(with: allJournals)
     }
+
+    @State private var folderToDelete: JournalFolder?
+    @State private var toDelete = false
+
 
     
     var body: some View {
@@ -34,7 +37,7 @@ struct JournalFolders: View {
                     AllJournals(journalFolder: allJournalsFolder)
                 }
                 
-                ForEach(journalFolders) { journalFolder in
+                ForEach(journalFolders.filter { $0.title != JournalFolder.allJournalsTitle }) { journalFolder in
                     NavigationLink {
                         AllJournals(journalFolder: journalFolder)
                     } label: {
@@ -46,8 +49,17 @@ struct JournalFolders: View {
                             newNameForFolder = journalFolder.title
                         }
                     }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            // Trigger delete confirmation
+                            folderToDelete = journalFolder
+                            toDelete = true
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                 }
-                .onDelete(perform: delete)
+//                .onDelete(perform: delete)
             }
             .navigationTitle("Journal Folders")
             .navigationBarTitleDisplayMode(.inline)
@@ -79,7 +91,17 @@ struct JournalFolders: View {
                     }
                 }
             })
-            
+            .alert("The \"\(folderToDelete?.title ?? "")\" folder and all its journal entries will be deleted", isPresented: $toDelete) {
+                Button("Cancel", role: .cancel) {
+                    folderToDelete = nil
+                }
+                Button("Delete", role: .destructive) {
+                    if let folder = folderToDelete {
+                        context.delete(folder)
+                    }
+                    folderToDelete = nil
+                }
+            }
             .toolbar {
                 Button {
                     addJournalTitle = true

@@ -11,21 +11,25 @@ import SwiftData
 struct AllJournals: View {
     @Bindable var journalFolder: JournalFolder
     @Environment(\.modelContext) private var context
+    var journals: [Journal] { journalFolder.journals }
+    var folderTitle: String { journalFolder.title }
+    
+    @Query private var journalFolders: [JournalFolder]
 
     var body: some View {
         NavigationStack {
             Group {
-                if journalFolder.journals.isEmpty {
-                    ContentUnavailableView("No journals yet", systemImage: "square.and.pencil", description: Text("Add your first journal."))
+                if journals.isEmpty {
+                    ContentUnavailableView("No journals yet", systemImage: "figure.mind.and.body.circle", description: Text("Add your first journal entry to have a better peace of mind."))
                 } else {
                     List {
-                        ForEach(journalFolder.journals.sorted { $0.date > $1.date }) { journal in
+                        ForEach(journals.sorted { $0.date > $1.date }) { journal in
                             NavigationLink {
-                                SingleJournal(journal: journal)
+                                SingleJournal(journal: journal, journalFolder: journalFolder)
                             } label: {
                                 VStack(alignment: .leading) {
-                                    Text(journal.title)
-                                        .font(.title3)
+                                    Text(journal.title.isEmpty ? journal.date.formatted(date: .abbreviated, time: .omitted) : journal.title)
+                                        .font(.title2)
                                         .bold()
                                     Text(journal.content)
                                         .lineLimit(1)
@@ -35,12 +39,24 @@ struct AllJournals: View {
                                         .foregroundStyle(.gray)
                                 }
                             }
+                            .contextMenu {
+                                Menu("Move to folder") {
+                                    ForEach(journalFolders) { folder in
+                                        Button(folder.title) {
+                                            if folder.title != JournalFolder.allJournalsTitle {
+                                                folder.journals.append(journal)
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
                         }
                         .onDelete(perform: delete)
                     }
                 }
             }
-            .navigationTitle(journalFolder.title)
+            .navigationTitle(folderTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 NavigationLink {
@@ -55,7 +71,7 @@ struct AllJournals: View {
 
     func delete(at offsets: IndexSet) {
         for index in offsets {
-            context.delete(journalFolder.journals[index])
+            context.delete(journals[index])
         }
     }
 }

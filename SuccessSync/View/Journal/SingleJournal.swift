@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingleJournal: View {
     @State var journal: Journal?
-    var journalFolder: JournalFolder?
+    @State var journalFolder: JournalFolder?
     @State private var title: String = ""
     @State private var content: String = ""
     var dateString: String {
@@ -26,16 +26,15 @@ struct SingleJournal: View {
                             get: {journal?.title ?? title },
                             set: { newValue in
                                 if journal != nil {
-                                    if newValue.isEmpty {
-                                        journal?.title = dateString
-                                    } else {
+                                    if !newValue.isEmpty {
                                         journal?.title = newValue
+                                    } else {
+                                        journal?.title = ""
                                     }
                                 } else {
                                     title = newValue
                                 }
-                            }),
-                          axis: .vertical)
+                            }))
                     .font(.title)
                     .fontWeight(.semibold)
                     .submitLabel(.next)
@@ -63,24 +62,23 @@ struct SingleJournal: View {
                 journal?.date = Date()
             }
             .padding()
-            .navigationTitle(journal?.title ?? dateString)
+            .navigationTitle(navBarTitle())
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if journal == nil {
                     Button {
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                        
+
                         
                         let newJournal = Journal(
                             title: title.isEmpty ? dateString : title,
                             content: content,
-                            date: Date(),
-                            folder: journalFolder
+                            date: Date()
                         )
                         
-                        
-                        journalFolder?.journals.append(newJournal)
-                        
+                        if journalFolder?.title != JournalFolder.allJournalsTitle {
+                            journalFolder?.journals.append(newJournal)
+                        }
                         context.insert(newJournal)
                         journal = newJournal
                     } label: {
@@ -89,6 +87,18 @@ struct SingleJournal: View {
                     }
                 }
             }
+        }
+    }
+    
+    func navBarTitle() -> String {
+        if let journal {
+            if journal.title.isEmpty {
+                return dateString
+            } else {
+                return journal.title
+            }
+        } else {
+            return dateString
         }
     }
 }
