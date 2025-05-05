@@ -59,7 +59,6 @@ struct JournalFolders: View {
                         }
                     }
                 }
-//                .onDelete(perform: delete)
             }
             .navigationTitle("Journal Folders")
             .navigationBarTitleDisplayMode(.inline)

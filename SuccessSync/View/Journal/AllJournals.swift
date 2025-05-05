@@ -53,7 +53,6 @@ struct AllJournals: View {
                                             }
                                         }
                                     }
-
                                 }
                             }
                         }
