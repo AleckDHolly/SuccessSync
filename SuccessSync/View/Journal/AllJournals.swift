@@ -42,8 +42,13 @@ struct AllJournals: View {
                             .contextMenu {
                                 Menu("Move to folder") {
                                     ForEach(journalFolders) { folder in
-                                        Button(folder.title) {
-                                            if folder.title != JournalFolder.allJournalsTitle {
+                                        if folder != journalFolder {
+                                            Button(folder.title) {
+                                                // Remove from current folder
+                                                if let index = journalFolder.journals.firstIndex(of: journal) {
+                                                    journalFolder.journals.remove(at: index)
+                                                }
+                                                // Add to new folder
                                                 folder.journals.append(journal)
                                             }
                                         }

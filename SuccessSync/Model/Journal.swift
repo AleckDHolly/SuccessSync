@@ -12,7 +12,7 @@ import SwiftData
 class JournalFolder {
     var id = UUID()
     var title: String
-    @Relationship(deleteRule: .cascade) var journals: [Journal]
+    var journals: [Journal]
 
     init(title: String, journals: [Journal]) {
         self.title = title
@@ -26,13 +26,11 @@ class Journal {
     var title: String
     var content: String
     var date: Date
-    @Relationship var folder: JournalFolder?
 
-    init(title: String, content: String, date: Date, folder: JournalFolder? = nil) {
+    init(title: String, content: String, date: Date) {
         self.title = title
         self.content = content
         self.date = date
-        self.folder = folder
     }
 }
 
