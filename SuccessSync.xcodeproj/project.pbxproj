@@ -87,6 +87,7 @@
 		ADD19FD32DAB6F8E00771974 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		ADD19FD62DAB722100771974 /* 3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		ADD19FD82DAB723100771974 /* 1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
+		D0656DE02E988BFB004413E4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D07498C52DC704A600FA6001 /* JournalFolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFolders.swift; sourceTree = "<group>"; };
 		D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		D09A7BC02DC522CB00A4FE46 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		AD1436A42D9C55A600A13929 = {
 			isa = PBXGroup;
 			children = (
+				D0656DE02E988BFB004413E4 /* .gitignore */,
 				AD1436D22D9CBC9600A13929 /* SuccessSync */,
 				AD1436AE2D9C55A600A13929 /* Products */,
 			);
@@ -124,7 +126,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD1436CA2D9CBC9600A13929 /* Model */ = {
+		AD1436CA2D9CBC9600A13929 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ADD19FD32DAB6F8E00771974 /* Onboarding.swift */,
@@ -135,7 +137,7 @@
 				AD5BDA3D2DA6121900CF1B68 /* Color+Extension.swift */,
 				AD35DEC02DA771E6009F7A2A /* AllQuotes.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AD1436CC2D9CBC9600A13929 /* Preview Content */ = {
@@ -146,7 +148,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AD1436CD2D9CBC9600A13929 /* View */ = {
+		AD1436CD2D9CBC9600A13929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				ADD19FC92DAB6D3800771974 /* Onboarding */,
@@ -155,7 +157,7 @@
 				AD35DF132DA887C8009F7A2A /* Goals */,
 				D09A7BC22DC5234E00A4FE46 /* Journal */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AD1436D22D9CBC9600A13929 /* SuccessSync */ = {
@@ -164,8 +166,8 @@
 				AD5BDA362DA39C9C00CF1B68 /* Info.plist */,
 				AD5BDA342DA39C4F00CF1B68 /* Tangerine-Bold.ttf */,
 				AD1436CC2D9CBC9600A13929 /* Preview Content */,
-				AD1436CA2D9CBC9600A13929 /* Model */,
-				AD1436CD2D9CBC9600A13929 /* View */,
+				AD1436CA2D9CBC9600A13929 /* Models */,
+				AD1436CD2D9CBC9600A13929 /* Views */,
 				D09A7BBD2DC3BCF700A4FE46 /* Controllers */,
 				AD1436CF2D9CBC9600A13929 /* Assets.xcassets */,
 				ADD19FD52DAB720C00771974 /* Lotties */,
@@ -278,7 +280,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					AD1436AC2D9C55A600A13929 = {
 						CreatedOnToolsVersion = 16.2;
@@ -421,6 +423,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -478,6 +481,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -502,13 +506,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.aleckdh.SuccessSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -540,13 +544,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.aleckdh.SuccessSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -29,9 +29,6 @@ struct SuccessSyncApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-                    AppOpenAdManager.shared.showAdIfAvailable()
-                }
         }
         .modelContainer(for: [Asset.self, Habit.self, Goal.self, Journal.self, JournalFolder.self])
     }

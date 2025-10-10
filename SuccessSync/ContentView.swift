@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @AppStorage("firstTime") var isFirstTime: Bool = true
+    @Query private var assets: [Asset]
+    @Query private var habits: [Habit]
+    @Query private var goals: [Goal]
+    @Query private var allJournals: [Journal]
+    
     var body: some View {
         TabView {
-            
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
@@ -30,6 +36,14 @@ struct ContentView: View {
                 .tabItem {
                     Label("Journal", systemImage: "book.pages.fill")
                 }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            if !isFirstTime && (!assets.isEmpty || !habits.isEmpty || !goals.isEmpty || !allJournals.isEmpty) {
+                AppOpenAdManager.shared.showAdIfAvailable()
+            }
+        }
+        .fullScreenCover(isPresented: $isFirstTime) {
+            OnboardingView()
         }
     }
 }

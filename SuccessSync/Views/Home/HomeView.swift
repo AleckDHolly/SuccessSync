@@ -14,8 +14,8 @@ struct HomeView: View {
     @State private var editDreamSheet: Bool = false
     @State private var asset: Asset?
     @Query(sort: \Asset.createdAt) private var assets: [Asset]
-    @AppStorage("firstTime") var isFirstTime: Bool = true
     @State private var currentIndex: Int? = 0
+    let photos = PHPhotoLibrary.authorizationStatus()
     
     let randomElement: Int = Int.random(in: 0..<allQuotes.count)
     
@@ -57,10 +57,13 @@ struct HomeView: View {
             .padding()
             .toolbar {
                 Button {
+                    if photos == .notDetermined {
+                        PHPhotoLibrary.requestAuthorization { status in
+                        }
+                    }
                     showingDreamSheet = true
                 } label: {
                     Image(systemName: "plus")
-                        .padding(.trailing)
                 }
             }
             .navigationTitle("Lock In")
@@ -73,9 +76,6 @@ struct HomeView: View {
                 EditDreamView(dream: asset.title, image: asset.image, asset: asset)
                     .presentationDetents([.medium])
             }
-        }
-        .fullScreenCover(isPresented: $isFirstTime) {
-            OnboardingView()
         }
     }
 }

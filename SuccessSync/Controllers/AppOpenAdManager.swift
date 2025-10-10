@@ -8,6 +8,7 @@
 import Foundation
 import GoogleMobileAds
 
+@MainActor
 class AppOpenAdManager: NSObject, FullScreenContentDelegate {
     var appOpenAd: AppOpenAd?
     var isLoadingAd = false
@@ -15,20 +16,27 @@ class AppOpenAdManager: NSObject, FullScreenContentDelegate {
     var loadTime: Date?
     let fourHoursInSeconds = TimeInterval(3600 * 4)
     
+    var adLoadCompletion: (() -> Void)?
+    
     static let shared = AppOpenAdManager()
     
-    private func loadAd() async {
+    private func loadAd(completion: (() -> Void)? = nil) async {
         // Do not load ad if there is an unused ad or one is already loading.
         if isLoadingAd || isAdAvailable() {
             return
         }
         isLoadingAd = true
+        self.adLoadCompletion = completion
         
         do {
             appOpenAd = try await AppOpenAd.load(
                 with: "ca-app-pub-4217825180009305/7152287581", request: Request())
             appOpenAd?.fullScreenContentDelegate = self
             loadTime = Date()
+            if let completion = self.adLoadCompletion {
+                completion()
+                self.adLoadCompletion = nil
+            }
         } catch {
             print("App open ad failed to load with error: \(error.localizedDescription)")
         }
@@ -55,7 +63,13 @@ class AppOpenAdManager: NSObject, FullScreenContentDelegate {
         // a new ad.
         if !isAdAvailable() {
             Task {
-                await loadAd()
+                await self.loadAd {
+                    if self.isAdAvailable(), !self.isShowingAd {
+                        DispatchQueue.main.async {
+                            self.showAdIfAvailable()
+                        }
+                    }
+                }
             }
             return
         }

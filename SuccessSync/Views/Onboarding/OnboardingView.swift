@@ -12,7 +12,7 @@ struct OnboardingView: View {
     let onboardings = Onboarding.allCases
     @Environment(\.dismiss) var dismiss
     @AppStorage("firstTime") var isFirstTime: Bool = true
-    let photos = PHPhotoLibrary.authorizationStatus()
+    @Environment(\.horizontalSizeClass) var sizeClass
     
     var body: some View {
         TabView {
@@ -27,16 +27,12 @@ struct OnboardingView: View {
                     if onboarding == onboardings.last! {
                         Button {
                             isFirstTime = false
-                            if photos == .notDetermined {
-                                PHPhotoLibrary.requestAuthorization { status in
-                                }
-                            }
                             dismiss()
                         } label: {
                             Text("Start")
                                 .font(.headline)
                                 .padding()
-                                .frame(maxWidth: .infinity)
+                                .frame(maxWidth: sizeClass == .compact ? .infinity : 400)
                                 .background(.blue)
                                 .cornerRadius(10)
                                 .padding()
@@ -48,6 +44,7 @@ struct OnboardingView: View {
                 }
             }
         }
+        .background(Color("bgColor"))
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
     }

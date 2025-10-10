@@ -92,11 +92,8 @@ struct AddHabitView: View {
                         dismiss()
                     } label: {
                         Image(systemName: "x.circle.fill")
-                            .font(.largeTitle)
+                            .font(.title2)
                             .foregroundStyle(.primary)
-                            .padding()
-                            .background(.ultraThinMaterial)
-                            .clipShape(Circle())
                     }
                 }
             }

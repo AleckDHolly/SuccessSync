@@ -10,8 +10,7 @@ import SwiftData
 
 struct JournalFolders: View {
     @Query(sort: \JournalFolder.title, order: .forward) private var journalFolders: [JournalFolder]
-    @Query(sort: \Journal.date, order: .reverse)
-    private var allJournals: [Journal]
+    @Query(sort: \Journal.date, order: .reverse) private var allJournals: [Journal]
 
     
     @Environment(\.modelContext) private var context
@@ -106,17 +105,18 @@ struct JournalFolders: View {
                     addJournalTitle = true
                 } label: {
                     Image(systemName: "plus")
-                        .padding(.trailing)
                 }
             }
         }
     }
     
     func addTitle() {
-        let journalFolder = JournalFolder(title: newJournalFolderTitle, journals: [])
-        context.insert(journalFolder)
-        newJournalFolderTitle = ""
-        addJournalTitle = false
+        if !newJournalFolderTitle.isEmpty {
+            let journalFolder = JournalFolder(title: newJournalFolderTitle, journals: [])
+            context.insert(journalFolder)
+            newJournalFolderTitle = ""
+            addJournalTitle = false
+        }
     }
     
     private func delete(at offsets: IndexSet) {

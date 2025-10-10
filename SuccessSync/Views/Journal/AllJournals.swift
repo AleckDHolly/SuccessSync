@@ -67,7 +67,6 @@ struct AllJournals: View {
                     SingleJournal(journalFolder: journalFolder)
                 } label: {
                     Image(systemName: "plus")
-                        .padding(.trailing)
                 }
             }
         }

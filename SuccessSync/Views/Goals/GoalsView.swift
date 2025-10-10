@@ -60,7 +60,6 @@ struct GoalsView: View {
                         addGoal = true
                     } label: {
                         Image(systemName: "plus")
-                            .padding(.trailing)
                     }
                 }
             }
