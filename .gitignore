@@ -1,3 +1,10 @@
+//
+//  .gitignore
+//  SuccessSync
+//
+//  Created by Aleck David Holly on 2025-10-09.
+//
+
 # macOS
 .DS_Store
 
@@ -32,4 +39,3 @@ fastlane/screenshots/
 # Others
 *.key
 *.pem
-
