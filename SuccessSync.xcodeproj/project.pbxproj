@@ -87,7 +87,7 @@
 		ADD19FD32DAB6F8E00771974 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		ADD19FD62DAB722100771974 /* 3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		ADD19FD82DAB723100771974 /* 1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
-		D0656DE12E988EE4004413E4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore; sourceTree = "<group>"; };
+		D055D1622EBEF180001CDFAB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore; sourceTree = "<group>"; };
 		D07498C52DC704A600FA6001 /* JournalFolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFolders.swift; sourceTree = "<group>"; };
 		D09A7BBE2DC3BD1C00A4FE46 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		D09A7BC02DC522CB00A4FE46 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		AD1436A42D9C55A600A13929 = {
 			isa = PBXGroup;
 			children = (
-				D0656DE12E988EE4004413E4 /* .gitignore */,
+				D055D1622EBEF180001CDFAB /* .gitignore */,
 				AD1436D22D9CBC9600A13929 /* SuccessSync */,
 				AD1436AE2D9C55A600A13929 /* Products */,
 			);
